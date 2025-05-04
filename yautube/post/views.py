@@ -1,13 +1,9 @@
 from django.shortcuts import render
-from django.http import HttpResponse
-
-
-
-all_grops = [f'grop {i}' for i in range(100)] 
 
 
 def group_posts(request, pk):
-    return HttpResponse(f'group {pk}')
+    template = 'posts/group_list.html'
+    return render(request, template)
 
 
 def index(request):
