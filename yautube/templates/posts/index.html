@@ -1,15 +1,17 @@
 {% extends "base.html" %} {% block title%} Последние обновления на сайте
-{%endblock title%} {% block main %} {% for post in all_posts %}
+{%endblock title%} {% block main %}
 <div class="container py-5">
   <h1>Последние обновления на сайте</h1>
+  {% for post in all_posts %}
   <article>
     <ul>
       <li>Автор: {{post.Autor}}</li>
       <li>Дата публикации: {{post.Date}}</li>
     </ul>
     <p>{{post.Text}}</p>
-    <a href="/groups/13">все записи группы</a>
+    <a href='{% url "post:group_page" post.Autor %}'>все записи группы</a>
   </article>
   <hr />
+  {% endfor %}
 </div>
-{% endfor %} {% endblock main %}
+{% endblock main %}
