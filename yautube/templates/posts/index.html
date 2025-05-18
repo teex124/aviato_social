@@ -5,11 +5,11 @@
   {% for post in all_posts %}
   <article>
     <ul>
-      <li>Автор: {{post.Autor}}</li>
-      <li>Дата публикации: {{post.Date}}</li>
+      <li>Автор: {{post.author.username}}</li>
+      <li>Дата публикации: {{post.pub_date}}</li>
     </ul>
-    <p>{{post.Text}}</p>
-    <a href='{% url "post:group_page" post.Autor %}'>все записи группы</a>
+    <p>{{post.text}}</p>
+    <a href='{% url "post:group_page" post.author.username %}'>все записи группы</a>
   </article>
   <hr />
   {% endfor %}

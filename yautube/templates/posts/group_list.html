@@ -2,13 +2,13 @@
 {%block main %}
 <div class="container py-5">
   {% for post in all_posts %} 
-  {% if post.Autor == request.path|slice:"8:"|cut:"/"%}
-  <h1>Записи группы {{post.Autor}}</h1>
+  {% if post.author.username == pk%}
+  <h1>Записи группы {{ post.author.username}}</h1>
   <article>
     <ul>
-      <li>Дата публикации: {{post.Date}}</li>
+      <li>Дата публикации: {{post.pub_date}}</li>
     </ul>
-    <p>{{post.Text}}</p>
+    <p>{{post.text}}</p>
   </article>
   <hr />
   {% endif %}
